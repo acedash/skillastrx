@@ -22,7 +22,7 @@
         
         <!-- Logo Area -->
         <div class="flex items-center justify-center h-[72px] px-6 border-b border-gray-100">
-            <img src="{{ asset('images/logo-1.jpeg') }}" alt="Skillstryx Academy" class="h-10 object-contain mix-blend-multiply">
+            <img src="{{ asset('images/logo-new.jpeg') }}" alt="Skillstryx Academy" class="h-10 object-contain mix-blend-multiply">
         </div>
         
         <!-- Navigation -->

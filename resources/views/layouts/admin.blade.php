@@ -36,7 +36,7 @@
         <!-- Logo Area -->
         <div class="flex items-center justify-center h-24 px-6 relative z-10">
             <div class="bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-[0_0_20px_rgba(255,255,255,0.05)] border border-white/10">
-                <img src="{{ asset('images/logo-1.jpeg') }}" alt="Skillstryx Academy" class="h-8 object-contain mix-blend-multiply">
+                <img src="{{ asset('images/logo-new.jpeg') }}" alt="Skillstryx Academy" class="h-8 object-contain mix-blend-multiply">
             </div>
         </div>
         
