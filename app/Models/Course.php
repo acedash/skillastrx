@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Course extends Model
+{
+    protected $fillable = [
+        'title',
+        'description',
+        'price',
+        'tools_count',
+    ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class)->orderBy('order');
+    }
+}
