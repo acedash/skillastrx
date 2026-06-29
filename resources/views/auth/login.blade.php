@@ -1,7 +1,7 @@
 <x-guest-layout>
     <!-- We override the default background with inline styles for this specific page to match the dark outer background in the mockup -->
     <style>
-        body { background-color: #1a1a1a !important; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
         .wave-bg {
             background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 Q100,0 200,50 T400,50 T600,50 T800,50' stroke='%23f1f5f9' fill='none' stroke-width='2' opacity='0.5'/%3E%3C/svg%3E");
             background-size: cover;
@@ -139,7 +139,7 @@
                                     <i class="far fa-envelope"></i>
                                 </div>
                                 <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
-                                    class="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder:text-gray-400" placeholder="Enter your email">
+                                    class="w-full !pl-11 !pr-4 py-3 bg-white border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder:text-gray-400" placeholder="Enter your email">
                             </div>
                             @if($errors->has('email'))
                                 <div class="mt-3 bg-red-50 rounded-xl p-3 flex items-start gap-2 border border-red-100">
@@ -159,7 +159,7 @@
                                     <i class="fas fa-lock text-[13px]"></i>
                                 </div>
                                 <input id="password" type="password" name="password" required autocomplete="current-password"
-                                    class="w-full pl-11 pr-11 py-3 bg-white border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder:text-gray-400" placeholder="Enter your password">
+                                    class="w-full !pl-11 !pr-11 py-3 bg-white border border-gray-200 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 transition-colors placeholder:text-gray-400" placeholder="Enter your password">
                                 <div class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 cursor-pointer hover:text-gray-600">
                                     <i class="far fa-eye-slash text-sm"></i>
                                 </div>
