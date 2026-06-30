@@ -34,9 +34,9 @@
         </div>
 
         <!-- Logo Area -->
-        <div class="flex items-center justify-center h-24 px-6 relative z-10">
-            <div class="bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-[0_0_20px_rgba(255,255,255,0.05)] border border-white/10">
-                <img src="{{ asset('images/logo-new.jpeg') }}" alt="Skillstryx Academy" class="h-8 object-contain mix-blend-multiply">
+        <div class="flex items-center justify-center h-24 px-6 relative z-10 mt-2">
+            <div class="bg-white p-2.5 w-full rounded-xl shadow-lg flex justify-center">
+                <img src="{{ asset('images/logo-new.jpeg') }}" alt="Skillstryx Academy" class="h-10 w-auto object-contain">
             </div>
         </div>
         

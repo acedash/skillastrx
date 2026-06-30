@@ -21,10 +21,7 @@
                 <!-- Logo -->
                 <div class="flex justify-between items-start mb-8 lg:mb-12">
                     <div class="flex items-center gap-2">
-                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center transform -skew-x-12">
-                            <span class="text-white font-bold text-xl skew-x-12 tracking-tighter">S</span>
-                        </div>
-                        <span class="text-2xl font-bold text-gray-900 tracking-tight">skillstryx</span>
+                        <img src="{{ asset('images/logo-new.jpeg') }}" alt="Skillstryx Academy" class="h-10 object-contain mix-blend-multiply">
                     </div>
                     
                     <div class="flex items-center text-gray-500 text-sm lg:hidden">
