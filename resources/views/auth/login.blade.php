@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     
-                    <a href="#" class="px-5 py-2.5 bg-white text-blue-700 font-semibold rounded-xl text-sm whitespace-nowrap hover:bg-gray-50 transition relative z-10 shadow-sm shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
+                    <a href="https://skillstryx.com/#courses" class="px-5 py-2.5 bg-white text-blue-700 font-semibold rounded-xl text-sm whitespace-nowrap hover:bg-gray-50 transition relative z-10 shadow-sm shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center">
                         Explore Courses <i class="fas fa-arrow-right text-[10px]"></i>
                     </a>
                 </div>

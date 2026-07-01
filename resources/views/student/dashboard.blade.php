@@ -14,7 +14,7 @@
         </div>
         <h3 class="text-2xl font-bold text-gray-900 mb-2">No active enrollments yet</h3>
         <p class="text-gray-500 mb-8 max-w-md mx-auto">You haven't been enrolled in any courses yet. When an administrator grants you access, your courses will appear here.</p>
-        <a href="https://astryxacademy.com/#courses" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition shadow-sm">
+        <a href="https://skillstryx.com/#courses" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition shadow-sm">
             <span>Explore Course Catalog</span>
             <i class="fas fa-arrow-right text-sm"></i>
         </a>
