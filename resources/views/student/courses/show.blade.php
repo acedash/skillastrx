@@ -17,29 +17,44 @@
     
     <!-- Left Column: Video Player -->
     <div class="flex-1 flex flex-col h-full bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200 relative">
-        @if($activeLesson && $activeLesson->youtube_url)
+        @if($activeLesson && ($activeLesson->youtube_url || $activeLesson->vimeo_url))
             @php
-                // Extract YouTube Video ID
-                $videoId = '';
-                if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $activeLesson->youtube_url, $match)) {
-                    $videoId = $match[1];
+                $youtubeId = '';
+                if ($activeLesson->youtube_url && preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/\s]{11})%i', $activeLesson->youtube_url, $match)) {
+                    $youtubeId = $match[1];
+                }
+                
+                $vimeoId = '';
+                if ($activeLesson->vimeo_url && preg_match('/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/(?:[^\/]*)\/videos\/|album\/(?:\d+)\/video\/|video\/|)(\d+)(?:[a-zA-Z0-9_\-]+)?/i', $activeLesson->vimeo_url, $match)) {
+                    $vimeoId = $match[1];
                 }
             @endphp
             
-            @if($videoId)
+            @if($youtubeId)
                 <div class="w-full h-full relative" style="padding-bottom: 56.25%;">
                     <iframe 
                         class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/{{ $videoId }}?rel=0&modestbranding=1&showinfo=0" 
+                        src="https://www.youtube.com/embed/{{ $youtubeId }}?rel=0&modestbranding=1&showinfo=0" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
                     </iframe>
                 </div>
+            @elseif($vimeoId)
+                <div class="w-full h-full relative" style="padding-bottom: 56.25%;">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://player.vimeo.com/video/{{ $vimeoId }}" 
+                        title="Vimeo video player" 
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
             @else
                 <div class="flex-1 flex flex-col items-center justify-center text-center p-8 bg-gray-900 text-white h-full">
-                    <i class="fab fa-youtube text-5xl text-gray-600 mb-4"></i>
+                    <i class="fas fa-video-slash text-5xl text-gray-600 mb-4"></i>
                     <h3 class="text-xl font-bold mb-2">Invalid Video URL</h3>
                     <p class="text-gray-400 max-w-md">The video URL provided for this lesson appears to be invalid.</p>
                 </div>
@@ -105,7 +120,7 @@
                             </h4>
                             <div class="flex items-center gap-2 mt-1">
                                 <span class="text-[10px] uppercase font-bold tracking-wider {{ $isActive ? 'text-indigo-500' : 'text-gray-400' }}">
-                                    @if($lesson->youtube_url) Video @else Text @endif
+                                    @if($lesson->youtube_url || $lesson->vimeo_url) Video @else Text @endif
                                 </span>
                                 @if($lesson->duration)
                                     <span class="w-1 h-1 rounded-full bg-gray-300"></span>
